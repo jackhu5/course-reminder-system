@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JackHu的课表</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JackHu的课表</h1>
+            <div class="week-selector">
+                <button id="prev-week">< 上一周</button>
+                <h2 id="current-week"></h2>
+                <button id="next-week">下一周 ></button>
+            </div>
+            <button id="current-week-btn">返回本周</button>
+        </header>
+        <main class="timetable-grid">
+            <!-- 时间表头 -->
+            <div class="grid-item time-header">时间</div>
+            <div class="grid-item day-header">周一 <span class="date"></span></div>
+            <div class="grid-item day-header">周二 <span class="date"></span></div>
+            <div class="grid-item day-header">周三 <span class="date"></span></div>
+            <div class="grid-item day-header">周四 <span class="date"></span></div>
+            <div class="grid-item day-header">周五 <span class="date"></span></div>
+            <div class="grid-item day-header">周六 <span class="date"></span></div>
+            <div class="grid-item day-header">周日 <span class="date"></span></div>
+
+            <!-- 时间列 -->
+            <!-- JS动态生成 -->
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

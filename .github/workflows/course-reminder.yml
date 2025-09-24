@@ -1,0 +1,104 @@
+name: 课程提醒系统
+
+on:
+  schedule:
+    # 每10分钟检查一次课前提醒（工作日）
+    - cron: '*/10 * * * 1-5'  # UTC时间，对应北京时间工作日
+    
+    # 每晚11点发送明日预告（北京时间23:00 = UTC 15:00）
+    - cron: '0 15 * * *'
+  
+  # 允许手动触发
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: '运行模式'
+        required: true
+        default: 'normal'
+        type: choice
+        options:
+        - normal
+        - test
+        - debug
+
+jobs:
+  course-reminder:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v4
+    
+    - name: 设置 Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: 安装依赖
+      run: npm ci --only=production || npm install --only=production
+    
+    - name: 设置时区为北京时间
+      run: |
+        sudo timedatectl set-timezone Asia/Shanghai
+        echo "当前时间: $(date)"
+    
+    - name: 运行课程提醒系统
+      env:
+        FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+        TZ: Asia/Shanghai
+      run: |
+        if [ "${{ github.event.inputs.mode }}" != "" ]; then
+          echo "手动触发模式: ${{ github.event.inputs.mode }}"
+          npm run ${{ github.event.inputs.mode }}
+        else
+          echo "定时触发模式: normal"
+          npm run reminder
+        fi
+    
+    - name: 上传运行日志
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: reminder-logs-${{ github.run_number }}
+        path: |
+          *.log
+        retention-days: 7
+
+  # 健康检查任务（每天运行一次）
+  health-check:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' && github.event.schedule == '0 15 * * *'
+    needs: course-reminder
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v4
+    
+    - name: 设置 Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    
+    - name: 安装依赖
+      run: npm ci --only=production || npm install --only=production
+    
+    - name: 运行健康检查
+      env:
+        FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+        TZ: Asia/Shanghai
+      run: |
+        echo "运行系统健康检查..."
+        npm run test
+    
+    - name: 检查系统状态
+      run: |
+        echo "=== 系统状态检查 ==="
+        echo "当前时间: $(date)"
+        echo "时区: $(timedatectl show --property=Timezone --value)"
+        echo "Node.js版本: $(node --version)"
+        echo "NPM版本: $(npm --version)"
+        echo "磁盘使用情况:"
+        df -h
+        echo "内存使用情况:"
+        free -h

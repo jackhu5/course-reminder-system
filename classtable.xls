@@ -1,0 +1,685 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:x='urn:schemas-microsoft-com:office:
+    <table class="table table-hover table-striped table-bordered" border="1">
+        <!-- 导出时使用的标题，通常搜索展示页面不显示 -->
+        <caption id="exportTitle" align="top" ng-show="false" class="ng-binding ng-hide">2025-2026学年秋季学期</caption>
+        <thead>
+        <tr>
+            <th style="text-align: center">节次</th>
+            <th style="text-align: center">星期一</th>
+            <th style="text-align: center">星期二</th>
+            <th style="text-align: center">星期三</th>
+            <th style="text-align: center">星期四</th>
+            <th style="text-align: center">星期五</th>
+            <th style="text-align: center">星期六</th>
+            <th style="text-align: center">星期天</th>
+        </tr>
+        </thead>
+        <thead>
+        <!-- ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">1</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">2</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">3</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope">电子材料与器件(教学班号：202510588) : 1-18周，每周星期一，3-4节，地点：闵行，闵行第四教学楼，闵四教225</td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope">药物化学生物学(教学班号：202511878) : 1-18周，每周星期五，3-4节，地点：闵行，闵行第二教学楼，闵二教316</td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">4</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">5</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">6</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope">人工智能药物设计(教学班号：202511867) : 1-18周，每周星期一，6-7节，地点：中北，中北文史楼，文史楼105</td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope">药学实验室安全与科研伦理(教学班号：202511868) : 5-10周，每周星期三，6-8节，地点：闵行，闵行第一教学楼，闵一教120</td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope">博士英语演讲(教学班号：202510232) : 1-18周，每周星期四，6-7节，地点：闵行，闵行第一教学楼，闵一教128</td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">7</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">8</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">9</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">10</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">11</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope">中国马克思主义与当代(教学班号：202510656) : 2-13周，每周星期一，11-13节，地点：闵行，闵行第四教学楼，闵四教110</td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope">创新药物与前沿技术(教学班号：202511865) : 1-18周，每周星期三，11-13节，地点：中北，中北文史楼，文史楼215</td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">12</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">13</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">14</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses -->
+        </thead>
+    </table>
+' xmlns='http://www.w3.org/TR/REC-html40'><head></head>
+    <table class="table table-hover table-striped table-bordered" border="1">
+        <!-- 导出时使用的标题，通常搜索展示页面不显示 -->
+        <caption id="exportTitle" align="top" ng-show="false" class="ng-binding ng-hide">2025-2026学年秋季学期</caption>
+        <thead>
+        <tr>
+            <th style="text-align: center">节次</th>
+            <th style="text-align: center">星期一</th>
+            <th style="text-align: center">星期二</th>
+            <th style="text-align: center">星期三</th>
+            <th style="text-align: center">星期四</th>
+            <th style="text-align: center">星期五</th>
+            <th style="text-align: center">星期六</th>
+            <th style="text-align: center">星期天</th>
+        </tr>
+        </thead>
+        <thead>
+        <!-- ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">1</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">2</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">3</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope">电子材料与器件(教学班号：202510588) : 1-18周，每周星期一，3-4节，地点：闵行，闵行第四教学楼，闵四教225</td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope">药物化学生物学(教学班号：202511878) : 1-18周，每周星期五，3-4节，地点：闵行，闵行第二教学楼，闵二教316</td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">4</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">5</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">6</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope">人工智能药物设计(教学班号：202511867) : 1-18周，每周星期一，6-7节，地点：中北，中北文史楼，文史楼105</td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope">药学实验室安全与科研伦理(教学班号：202511868) : 5-10周，每周星期三，6-8节，地点：闵行，闵行第一教学楼，闵一教120</td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope">博士英语演讲(教学班号：202510232) : 1-18周，每周星期四，6-7节，地点：闵行，闵行第一教学楼，闵一教128</td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">7</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">8</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">9</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">10</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">11</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope">中国马克思主义与当代(教学班号：202510656) : 2-13周，每周星期一，11-13节，地点：闵行，闵行第四教学楼，闵四教110</td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope">创新药物与前沿技术(教学班号：202511865) : 1-18周，每周星期三，11-13节，地点：中北，中北文史楼，文史楼215</td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">12</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">13</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses --><tr ng-repeat="x in classScheduleCtrl.courses" class="ng-scope">
+            <td style="text-align: center;vertical-align: middle;font-size:14px" class="ng-binding">14</td>
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day2"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day3"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day4"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day5"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day6"></td>-->
+            <!--<td style="text-align: center;vertical-align: middle;font-size:14px"ng-bind-html="x.day7"></td>-->
+            <!-- ngIf: x.flagday1 == '否' || x.flagday1 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day1" ng-if="x.flagday1 == '否' || x.flagday1 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday1 == '否' || x.flagday1 == '占用' -->
+            <!-- ngIf: x.flagday1 == '是' -->
+            <!-- ngIf: x.flagday2 == '否' || x.flagday2 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day2" ng-if="x.flagday2 == '否' || x.flagday2 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday2 == '否' || x.flagday2 == '占用' -->
+            <!-- ngIf: x.flagday2 == '是' -->
+            <!-- ngIf: x.flagday3 == '否' || x.flagday3 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day3" ng-if="x.flagday3 == '否' || x.flagday3 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday3 == '否' || x.flagday3 == '占用' -->
+            <!-- ngIf: x.flagday3 == '是' -->
+            <!-- ngIf: x.flagday4 == '否' || x.flagday4 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day4" ng-if="x.flagday4 == '否' || x.flagday4 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday4 == '否' || x.flagday4 == '占用' -->
+            <!-- ngIf: x.flagday4 == '是' -->
+            <!-- ngIf: x.flagday5 == '否' || x.flagday5 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day5" ng-if="x.flagday5 == '否' || x.flagday5 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday5 == '否' || x.flagday5 == '占用' -->
+            <!-- ngIf: x.flagday5 == '是' -->
+            <!-- ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day6" ng-if="x.flagday6 == '否'|| x.flagday6 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday6 == '否'|| x.flagday6 == '占用' -->
+            <!-- ngIf: x.flagday6 == '是' -->
+            <!-- ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' --><td style="text-align: center;vertical-align: middle;font-size:14px" ng-bind-html="x.day7" ng-if="x.flagday7 == '否'|| x.flagday7 == '占用'" class="ng-binding ng-scope"></td><!-- end ngIf: x.flagday7 == '否'|| x.flagday7 == '占用' -->
+            <!-- ngIf: x.flagday7 == '是' -->
+        </tr><!-- end ngRepeat: x in classScheduleCtrl.courses -->
+        </thead>
+    </table>
+</body></html>

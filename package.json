@@ -1,0 +1,33 @@
+{
+  "name": "course-reminder-system",
+  "version": "1.0.0",
+  "description": "智能课程提醒系统 - 基于GitHub Actions和飞书webhook的自动化课程提醒",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/main.js test",
+    "debug": "node src/main.js debug",
+    "reminder": "node src/main.js normal"
+  },
+  "keywords": [
+    "course",
+    "reminder",
+    "feishu",
+    "github-actions",
+    "automation",
+    "notification"
+  ],
+  "author": "Course Reminder System",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/course-reminder-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/course-reminder-system/issues"
+  },
+  "homepage": "https://github.com/your-username/course-reminder-system#readme"
+}
