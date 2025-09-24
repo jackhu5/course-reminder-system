@@ -33,10 +33,9 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
     
     - name: 安装依赖
-      run: npm ci --only=production || npm install --only=production
+      run: npm install --only=production
     
     - name: 设置时区为北京时间
       run: |
