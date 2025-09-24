@@ -56,13 +56,15 @@ jobs:
         fi
     
     - name: 上传运行日志
-      if: always()
+      if: failure()
       uses: actions/upload-artifact@v4
       with:
         name: reminder-logs-${{ github.run_number }}
         path: |
           *.log
+          *.txt
         retention-days: 7
+        if-no-files-found: ignore
 
   # 健康检查任务（每天运行一次）
   health-check:
