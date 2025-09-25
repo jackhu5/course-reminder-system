@@ -117,10 +117,8 @@ function getDateByWeekAndDay(week, dayOfWeek) {
  * @returns {Date} 北京时间
  */
 function getBeijingTime() {
-  const now = new Date();
-  // 转换为北京时间（UTC+8）
-  const beijingTime = new Date(now.getTime() + (8 * 60 * 60 * 1000));
-  return beijingTime;
+  // 直接返回当前Date对象，时区处理将由环境变量TZ控制
+  return new Date();
 }
 
 /**

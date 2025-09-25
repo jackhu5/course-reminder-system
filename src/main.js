@@ -26,7 +26,7 @@ const FEISHU_WEBHOOK_URL = process.env.FEISHU_WEBHOOK_URL;
 async function runReminderCheck() {
   console.log('='.repeat(50));
   console.log('🚀 课程提醒系统启动');
-  console.log(`⏰ 当前时间: ${getBeijingTime().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`);
+  console.log(`⏰ 当前时间: ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`);
   console.log(`📅 当前学期周次: 第${getCurrentWeek()}周`);
   console.log('='.repeat(50));
 
