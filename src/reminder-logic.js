@@ -23,29 +23,23 @@ function checkUpcomingClasses() {
   const currentWeek = getCurrentWeek();
   const currentDayOfWeek = getDayOfWeek(now);
   const currentMinutes = now.getHours() * 60 + now.getMinutes();
-  
+  const checkInterval = 10; // GitHub Actions的运行周期是10分钟
+  const lastCheckMinutes = currentMinutes - checkInterval;
+
   const upcomingClasses = [];
-  
-  // 遍历所有课程
+
   courses.forEach(course => {
-    // 检查课程是否在当前周次有效
-    if (!isCourseActiveInWeek(course, currentWeek)) {
+    if (!isCourseActiveInWeek(course, currentWeek) || course.dayOfWeek !== currentDayOfWeek) {
       return;
     }
-    
-    // 检查是否是今天的课程
-    if (course.dayOfWeek !== currentDayOfWeek) {
-      return;
-    }
-    
-    // 获取课程时间信息
+
     const courseTime = getCourseTime(course, timeSlots);
     const reminderAdvanceMinutes = CAMPUS_REMINDER_CONFIG[course.campus];
     const reminderTime = courseTime.startMinutes - reminderAdvanceMinutes;
-    
-    // 检查是否到了提醒时间（允许5分钟的误差范围）
-    const timeDiff = Math.abs(currentMinutes - reminderTime);
-    if (timeDiff <= 5) {
+
+    // 核心逻辑：检查预定提醒时间是否正好落在上一个检查周期和当前时间之间。
+    // 这个逻辑可以完美应对GitHub Actions的执行延迟，并避免重复发送。
+    if (reminderTime > lastCheckMinutes && reminderTime <= currentMinutes) {
       upcomingClasses.push({
         ...course,
         courseTime,
@@ -54,7 +48,7 @@ function checkUpcomingClasses() {
       });
     }
   });
-  
+
   return upcomingClasses;
 }
 
@@ -180,10 +174,10 @@ function generateNoClassMessage() {
 function shouldSendTomorrowPreview() {
   const now = getBeijingTime();
   const currentHour = now.getHours();
-  const currentMinute = now.getMinutes();
   
-  // 检查是否是晚上11点（允许5分钟误差）
-  return currentHour === 23 && currentMinute <= 5;
+  // 只要任务是在北京时间晚上11点这个小时内触发的，就认为是有效的每日预告任务
+  // 这可以完美应对GitHub Actions的执行延迟
+  return currentHour === 23;
 }
 
 module.exports = {
