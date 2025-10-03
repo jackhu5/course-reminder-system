@@ -195,21 +195,50 @@ async function sendTomorrowPreview(webhookUrl, previewMessage, tomorrowClasses) 
  * @returns {Promise<boolean>} 发送是否成功
  */
 async function sendTestNotification(webhookUrl) {
-  const testMessage = `🧪 课程提醒系统测试
-
-系统运行正常！
-当前时间: ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}
-
-如果您收到这条消息，说明提醒系统已成功部署 ✅`;
-
   console.log('发送测试通知');
-  const payload = {
-    msg_type: "text",
-    content: {
-      text: testMessage
+
+  const cardPayload = {
+    msg_type: 'interactive',
+    card: {
+      header: {
+        title: {
+          tag: 'plain_text',
+          content: '🧪 课程提醒系统测试'
+        },
+        template: 'green' // 使用绿色模板表示成功、测试通过
+      },
+      elements: [
+        {
+          tag: 'div',
+          text: {
+            tag: 'lark_md',
+            content: '**系统运行正常！**'
+          }
+        },
+        {
+          tag: 'hr'
+        },
+        {
+          tag: 'div',
+          text: {
+            tag: 'lark_md',
+            content: `**当前时间:**\n${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`
+          }
+        },
+        {
+          tag: 'note', // 使用备注模块
+          elements: [
+            {
+              tag: 'plain_text',
+              content: '如果您收到这条消息，说明提醒系统已成功部署 ✅'
+            }
+          ]
+        }
+      ]
     }
   };
-  return await sendFeishuNotification(webhookUrl, payload);
+
+  return await sendFeishuNotification(webhookUrl, cardPayload);
 }
 
 /**
