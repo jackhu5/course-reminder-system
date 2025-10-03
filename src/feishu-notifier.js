@@ -17,11 +17,23 @@ async function sendFeishuNotification(webhookUrl, message) {
       const isHttps = url.protocol === 'https:';
       const client = isHttps ? https : http;
       
-      // 构造飞书消息格式（纯文本格式）
+      // 构造飞书消息格式（富文本格式，支持换行）
       const payload = {
-        msg_type: "text",
+        msg_type: "post",
         content: {
-          text: message
+          post: {
+            "zh_cn": {
+              "title": "课程提醒", // 富文本标题（在消息预览中显示）
+              "content": [
+                [
+                  {
+                    "tag": "text",
+                    "text": message
+                  }
+                ]
+              ]
+            }
+          }
         }
       };
       
