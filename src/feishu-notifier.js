@@ -203,7 +203,13 @@ async function sendTestNotification(webhookUrl) {
 如果您收到这条消息，说明提醒系统已成功部署 ✅`;
 
   console.log('发送测试通知');
-  return await sendFeishuNotification(webhookUrl, testMessage);
+  const payload = {
+    msg_type: "text",
+    content: {
+      text: testMessage
+    }
+  };
+  return await sendFeishuNotification(webhookUrl, payload);
 }
 
 /**
