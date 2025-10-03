@@ -132,8 +132,8 @@ async function runTestMode() {
     console.log('\n📊 当前课程状态:');
     console.log(`当前周次: 第${getCurrentWeek()}周`);
     
-    const upcomingClasses = checkUpcomingClasses();
-    console.log(`即将开始的课程: ${upcomingClasses.length}门`);
+    // const upcomingClasses = checkUpcomingClasses();
+    // console.log(`即将开始的课程: ${upcomingClasses.length}门`);
     
     const tomorrowClasses = getTomorrowClasses();
     console.log(`明天的课程: ${tomorrowClasses.length}门`);
@@ -163,20 +163,20 @@ async function runDebugMode() {
     console.log(`当前周次: 第${getCurrentWeek()}周`);
     
     // 检查课前提醒
-    const upcomingClasses = checkUpcomingClasses();
-    console.log(`\n📚 即将开始的课程 (${upcomingClasses.length}门):`);
+    // const upcomingClasses = checkUpcomingClasses();
+    // console.log(`\n📚 即将开始的课程 (${upcomingClasses.length}门):`);
     
-    if (upcomingClasses.length > 0) {
-      upcomingClasses.forEach(course => {
-        console.log(`\n课程: ${course.name}`);
-        console.log(`校区: ${course.campus}`);
-        console.log(`时间: ${course.courseTime.startTime}-${course.courseTime.endTime}`);
-        console.log(`提醒消息:`);
-        console.log(generateClassReminderMessage(course));
-      });
-    } else {
-      console.log('  无');
-    }
+    // if (upcomingClasses.length > 0) {
+    //   upcomingClasses.forEach(course => {
+    //     console.log(`\n课程: ${course.name}`);
+    //     console.log(`校区: ${course.campus}`);
+    //     console.log(`时间: ${course.courseTime.startTime}-${course.courseTime.endTime}`);
+    //     console.log(`提醒消息:`);
+    //     console.log(generateClassReminderMessage(course));
+    //   });
+    // } else {
+    //   console.log('  无');
+    // }
     
     // 检查明日预告
     const tomorrowClasses = getTomorrowClasses();
