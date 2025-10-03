@@ -70,19 +70,7 @@ async function runReminderCheck() {
       const tomorrowClasses = getTomorrowClasses();
       const previewMessage = generateTomorrowPreviewMessage(tomorrowClasses);
       
-      if (previewMessage.isNoClass) {
-        // 如果没有课程，直接发送祝福消息
-        const payload = {
-          msg_type: "text",
-          content: {
-            text: previewMessage.message
-          }
-        };
-        await sendFeishuNotification(FEISHU_WEBHOOK_URL, payload);
-      } else {
-        // 如果有课程，发送课程卡片
-        await sendTomorrowPreview(FEISHU_WEBHOOK_URL, previewMessage, tomorrowClasses);
-      }
+      const success = await sendTomorrowPreview(FEISHU_WEBHOOK_URL, previewMessage);
       
       if (!success) {
         console.error('❌ 明日预告发送失败');

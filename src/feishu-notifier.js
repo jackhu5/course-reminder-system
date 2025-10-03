@@ -10,12 +10,20 @@ const http = require('http');
  * @param {string} message - 消息内容
  * @returns {Promise<boolean>} 发送是否成功
  */
-async function sendFeishuNotification(webhookUrl, payload) {
+async function sendFeishuNotification(webhookUrl, message) {
   return new Promise((resolve, reject) => {
     try {
       const url = new URL(webhookUrl);
       const isHttps = url.protocol === 'https:';
       const client = isHttps ? https : http;
+      
+      // 构造飞书消息格式（纯文本格式）
+      const payload = {
+        msg_type: "text",
+        content: {
+          text: message
+        }
+      };
       
       const postData = JSON.stringify(payload);
       
@@ -100,85 +108,11 @@ async function sendClassReminder(webhookUrl, course, message) {
  * @param {string} message - 预告消息
  * @returns {Promise<boolean>} 发送是否成功
  */
-async function sendTomorrowPreview(webhookUrl, previewMessage, tomorrowClasses) {
+async function sendTomorrowPreview(webhookUrl, message) {
   console.log('准备发送明日课程预告');
+  console.log(`预告内容:\n${message}`);
   
-  const cardPayload = {
-    msg_type: 'interactive',
-    card: {
-      header: {
-        title: {
-          tag: 'plain_text',
-          content: '🌙 明日课程预告'
-        },
-        template: 'blue'
-      },
-      elements: [
-        {
-          tag: 'div',
-          text: {
-            tag: 'lark_md',
-            content: `📅 **明天 ${previewMessage.dateStr} 的课程安排：**`
-          }
-        },
-        {
-          tag: 'hr'
-        },
-        ...tomorrowClasses.map(course => ({
-          tag: 'div',
-          fields: [
-            {
-              is_short: true,
-              text: {
-                tag: 'lark_md',
-                content: `**📖 课程**\n${course.name}`
-              }
-            },
-            {
-              is_short: true,
-              text: {
-                tag: 'lark_md',
-                content: `**⏰ 时间**\n${course.courseTime.startTime}-${course.courseTime.endTime}`
-              }
-            },
-            {
-              is_short: false,
-              text: {
-                tag: 'lark_md',
-                content: ''
-              }
-            },
-            {
-              is_short: true,
-              text: {
-                tag: 'lark_md',
-                content: `**📍 地点**\n${course.locationText}`
-              }
-            },
-            {
-              is_short: true,
-              text: {
-                tag: 'lark_md',
-                content: `**🏫 校区**\n${course.campus}校区`
-              }
-            }
-          ]
-        })),
-        {
-          tag: 'hr'
-        },
-        {
-          tag: 'div',
-          text: {
-            tag: 'lark_md',
-            content: '早点休息，明天加油！🌟'
-          }
-        }
-      ]
-    }
-  };
-
-  const success = await sendFeishuNotification(webhookUrl, cardPayload);
+  const success = await sendFeishuNotification(webhookUrl, message);
   
   if (success) {
     console.log('✅ 明日预告发送成功');
@@ -195,50 +129,15 @@ async function sendTomorrowPreview(webhookUrl, previewMessage, tomorrowClasses) 
  * @returns {Promise<boolean>} 发送是否成功
  */
 async function sendTestNotification(webhookUrl) {
+  const testMessage = `🧪 课程提醒系统测试
+
+系统运行正常！
+当前时间: ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}
+
+如果您收到这条消息，说明提醒系统已成功部署 ✅`;
+
   console.log('发送测试通知');
-
-  const cardPayload = {
-    msg_type: 'interactive',
-    card: {
-      header: {
-        title: {
-          tag: 'plain_text',
-          content: '🧪 课程提醒系统测试'
-        },
-        template: 'green' // 使用绿色模板表示成功、测试通过
-      },
-      elements: [
-        {
-          tag: 'div',
-          text: {
-            tag: 'lark_md',
-            content: '**系统运行正常！**'
-          }
-        },
-        {
-          tag: 'hr'
-        },
-        {
-          tag: 'div',
-          text: {
-            tag: 'lark_md',
-            content: `**当前时间:**\n${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`
-          }
-        },
-        {
-          tag: 'note', // 使用备注模块
-          elements: [
-            {
-              tag: 'plain_text',
-              content: '如果您收到这条消息，说明提醒系统已成功部署 ✅'
-            }
-          ]
-        }
-      ]
-    }
-  };
-
-  return await sendFeishuNotification(webhookUrl, cardPayload);
+  return await sendFeishuNotification(webhookUrl, testMessage);
 }
 
 /**

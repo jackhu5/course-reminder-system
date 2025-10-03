@@ -75,13 +75,10 @@ function getTomorrowClasses() {
     }
     
     const courseTime = getCourseTime(course, timeSlots);
-    const locationParts = course.location.split('，');
-    const locationText = locationParts.length > 1 ? locationParts[1] : course.location;
     tomorrowClasses.push({
       ...course,
       courseTime,
-      date: tomorrow,
-      locationText
+      date: tomorrow
     });
   });
   
@@ -125,20 +122,33 @@ ${actionText} ${actionEmoji}`;
  */
 function generateTomorrowPreviewMessage(tomorrowClasses) {
   if (tomorrowClasses.length === 0) {
-    // 对于无课的情况，我们仍然可以返回一个富文本消息
-    return {
-      isNoClass: true,
-      message: generateNoClassMessage()
-    };
+    return generateNoClassMessage();
   }
   
   const tomorrow = tomorrowClasses[0].date;
   const dateStr = formatDateChinese(tomorrow);
   
-  return {
-    isNoClass: false,
-    dateStr: dateStr
-  };
+  let message = `🌙 明日课程预告
+
+📅 明天 ${dateStr} 的课程安排：
+
+`;
+  
+  tomorrowClasses.forEach(course => {
+    const { name, campus, location, courseTime } = course;
+    const locationParts = location.split('，');
+    const locationText = locationParts.length > 1 ? locationParts[1] : location;
+    
+    message += `📖 ${name}
+⏰ ${courseTime.startTime}-${courseTime.endTime} (第${course.periods.join('-')}节)
+📍 ${locationText} (${campus}校区)
+
+`;
+  });
+  
+  message += '早点休息，明天加油！🌟';
+  
+  return message;
 }
 
 /**
