@@ -14,43 +14,43 @@ const {
   minutesToTime
 } = require('./time-calculator');
 
-/**
- * 检查是否需要发送课前提醒
- * @returns {Array} 需要提醒的课程列表
- */
-function checkUpcomingClasses() {
-  const now = getBeijingTime();
-  const currentWeek = getCurrentWeek();
-  const currentDayOfWeek = getDayOfWeek(now);
-  const currentMinutes = now.getHours() * 60 + now.getMinutes();
-  const checkInterval = 10; // GitHub Actions的运行周期是10分钟
-  const lastCheckMinutes = currentMinutes - checkInterval;
-
-  const upcomingClasses = [];
-
-  courses.forEach(course => {
-    if (!isCourseActiveInWeek(course, currentWeek) || course.dayOfWeek !== currentDayOfWeek) {
-      return;
-    }
-
-    const courseTime = getCourseTime(course, timeSlots);
-    const reminderAdvanceMinutes = CAMPUS_REMINDER_CONFIG[course.campus];
-    const reminderTime = courseTime.startMinutes - reminderAdvanceMinutes;
-
-    // 核心逻辑：检查预定提醒时间是否正好落在上一个检查周期和当前时间之间。
-    // 这个逻辑可以完美应对GitHub Actions的执行延迟，并避免重复发送。
-    if (reminderTime > lastCheckMinutes && reminderTime <= currentMinutes) {
-      upcomingClasses.push({
-        ...course,
-        courseTime,
-        reminderAdvanceMinutes,
-        actualReminderTime: minutesToTime(reminderTime)
-      });
-    }
-  });
-
-  return upcomingClasses;
-}
+// /**
+//  * 检查是否需要发送课前提醒
+//  * @returns {Array} 需要提醒的课程列表
+//  */
+// function checkUpcomingClasses() {
+//   const now = getBeijingTime();
+//   const currentWeek = getCurrentWeek();
+//   const currentDayOfWeek = getDayOfWeek(now);
+//   const currentMinutes = now.getHours() * 60 + now.getMinutes();
+//   const checkInterval = 10; // GitHub Actions的运行周期是10分钟
+//   const lastCheckMinutes = currentMinutes - checkInterval;
+//
+//   const upcomingClasses = [];
+//
+//   courses.forEach(course => {
+//     if (!isCourseActiveInWeek(course, currentWeek) || course.dayOfWeek !== currentDayOfWeek) {
+//       return;
+//     }
+//
+//     const courseTime = getCourseTime(course, timeSlots);
+//     const reminderAdvanceMinutes = CAMPUS_REMINDER_CONFIG[course.campus];
+//     const reminderTime = courseTime.startMinutes - reminderAdvanceMinutes;
+//
+//     // 核心逻辑：检查预定提醒时间是否正好落在上一个检查周期和当前时间之间。
+//     // 这个逻辑可以完美应对GitHub Actions的执行延迟，并避免重复发送。
+//     if (reminderTime > lastCheckMinutes && reminderTime <= currentMinutes) {
+//       upcomingClasses.push({
+//         ...course,
+//         courseTime,
+//         reminderAdvanceMinutes,
+//         actualReminderTime: minutesToTime(reminderTime)
+//       });
+//     }
+//   });
+//
+//   return upcomingClasses;
+// }
 
 /**
  * 获取明天的课程安排
@@ -75,10 +75,13 @@ function getTomorrowClasses() {
     }
     
     const courseTime = getCourseTime(course, timeSlots);
+    const locationParts = course.location.split('，');
+    const locationText = locationParts.length > 1 ? locationParts[1] : course.location;
     tomorrowClasses.push({
       ...course,
       courseTime,
-      date: tomorrow
+      date: tomorrow,
+      locationText
     });
   });
   
@@ -122,33 +125,20 @@ ${actionText} ${actionEmoji}`;
  */
 function generateTomorrowPreviewMessage(tomorrowClasses) {
   if (tomorrowClasses.length === 0) {
-    return generateNoClassMessage();
+    // 对于无课的情况，我们仍然可以返回一个富文本消息
+    return {
+      isNoClass: true,
+      message: generateNoClassMessage()
+    };
   }
   
   const tomorrow = tomorrowClasses[0].date;
   const dateStr = formatDateChinese(tomorrow);
   
-  let message = `🌙 明日课程预告
-
-📅 明天 ${dateStr} 的课程安排：
-
-`;
-  
-  tomorrowClasses.forEach(course => {
-    const { name, campus, location, courseTime } = course;
-    const locationParts = location.split('，');
-    const locationText = locationParts.length > 1 ? locationParts[1] : location;
-    
-    message += `📖 ${name}
-⏰ ${courseTime.startTime}-${courseTime.endTime} (第${course.periods.join('-')}节)
-📍 ${locationText} (${campus}校区)
-
-`;
-  });
-  
-  message += '早点休息，明天加油！🌟';
-  
-  return message;
+  return {
+    isNoClass: false,
+    dateStr: dateStr
+  };
 }
 
 /**
@@ -181,7 +171,7 @@ function shouldSendTomorrowPreview() {
 }
 
 module.exports = {
-  checkUpcomingClasses,
+  // checkUpcomingClasses,
   getTomorrowClasses,
   generateClassReminderMessage,
   generateTomorrowPreviewMessage,

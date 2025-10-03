@@ -2,9 +2,9 @@ name: 课程提醒系统
 
 on:
   schedule:
-    # 优化课前提醒检查时间：仅在工作日北京时间9:00-18:00之间每10分钟运行一次
-    # 对应UTC时间为 1:00-10:00
-    - cron: '*/10 1-10 * * 1-5'
+    # # 优化课前提醒检查时间：仅在工作日北京时间9:00-18:00之间每10分钟运行一次
+    # # 对应UTC时间为 1:00-10:00
+    # - cron: '*/10 1-10 * * 1-5'
     
     # 每晚11点发送明日预告（北京时间23:00 = UTC 15:00）
     - cron: '0 15 * * *'
@@ -67,7 +67,7 @@ jobs:
   # 健康检查任务（每天运行一次）
   health-check:
     runs-on: ubuntu-latest
-    if: github.event_name == 'schedule' && github.event.schedule == '0 15 * * *'
+    if: github.event.schedule == '0 15 * * *'
     needs: course-reminder
     
     steps:

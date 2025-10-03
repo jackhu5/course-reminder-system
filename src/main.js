@@ -1,12 +1,12 @@
 // 主程序入口
 // 整合所有模块，处理定时提醒逻辑
 
-const { 
-  checkUpcomingClasses, 
-  getTomorrowClasses, 
-  generateClassReminderMessage, 
+const {
+  // checkUpcomingClasses,
+  getTomorrowClasses,
+  // generateClassReminderMessage,
   generateTomorrowPreviewMessage,
-  shouldSendTomorrowPreview 
+  shouldSendTomorrowPreview
 } = require('./reminder-logic');
 
 const { 
@@ -38,28 +38,28 @@ async function runReminderCheck() {
   let hasNotifications = false;
 
   try {
-    // 1. 检查课前提醒
-    console.log('🔍 检查课前提醒...');
-    const upcomingClasses = checkUpcomingClasses();
+    // // 1. 检查课前提醒
+    // console.log('🔍 检查课前提醒...');
+    // const upcomingClasses = checkUpcomingClasses();
     
-    if (upcomingClasses.length > 0) {
-      console.log(`📚 发现 ${upcomingClasses.length} 门即将开始的课程`);
-      hasNotifications = true;
+    // if (upcomingClasses.length > 0) {
+    //   console.log(`📚 发现 ${upcomingClasses.length} 门即将开始的课程`);
+    //   hasNotifications = true;
       
-      for (const course of upcomingClasses) {
-        const message = generateClassReminderMessage(course);
-        const success = await sendClassReminder(FEISHU_WEBHOOK_URL, course, message);
+    //   for (const course of upcomingClasses) {
+    //     const message = generateClassReminderMessage(course);
+    //     const success = await sendClassReminder(FEISHU_WEBHOOK_URL, course, message);
         
-        if (!success) {
-          console.error(`❌ 课程提醒发送失败: ${course.name}`);
-        }
+    //     if (!success) {
+    //       console.error(`❌ 课程提醒发送失败: ${course.name}`);
+    //     }
         
-        // 避免发送过于频繁
-        await new Promise(resolve => setTimeout(resolve, 2000));
-      }
-    } else {
-      console.log('✅ 当前时间无需发送课前提醒');
-    }
+    //     // 避免发送过于频繁
+    //     await new Promise(resolve => setTimeout(resolve, 2000));
+    //   }
+    // } else {
+    //   console.log('✅ 当前时间无需发送课前提醒');
+    // }
 
     // 2. 检查明日预告
     console.log('🔍 检查明日预告...');
@@ -70,7 +70,19 @@ async function runReminderCheck() {
       const tomorrowClasses = getTomorrowClasses();
       const previewMessage = generateTomorrowPreviewMessage(tomorrowClasses);
       
-      const success = await sendTomorrowPreview(FEISHU_WEBHOOK_URL, previewMessage);
+      if (previewMessage.isNoClass) {
+        // 如果没有课程，直接发送祝福消息
+        const payload = {
+          msg_type: "text",
+          content: {
+            text: previewMessage.message
+          }
+        };
+        await sendFeishuNotification(FEISHU_WEBHOOK_URL, payload);
+      } else {
+        // 如果有课程，发送课程卡片
+        await sendTomorrowPreview(FEISHU_WEBHOOK_URL, previewMessage, tomorrowClasses);
+      }
       
       if (!success) {
         console.error('❌ 明日预告发送失败');

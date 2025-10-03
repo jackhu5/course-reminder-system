@@ -10,20 +10,12 @@ const http = require('http');
  * @param {string} message - 消息内容
  * @returns {Promise<boolean>} 发送是否成功
  */
-async function sendFeishuNotification(webhookUrl, message) {
+async function sendFeishuNotification(webhookUrl, payload) {
   return new Promise((resolve, reject) => {
     try {
       const url = new URL(webhookUrl);
       const isHttps = url.protocol === 'https:';
       const client = isHttps ? https : http;
-      
-      // 构造飞书消息格式（纯文本格式）
-      const payload = {
-        msg_type: "text",
-        content: {
-          text: message
-        }
-      };
       
       const postData = JSON.stringify(payload);
       
@@ -108,11 +100,85 @@ async function sendClassReminder(webhookUrl, course, message) {
  * @param {string} message - 预告消息
  * @returns {Promise<boolean>} 发送是否成功
  */
-async function sendTomorrowPreview(webhookUrl, message) {
+async function sendTomorrowPreview(webhookUrl, previewMessage, tomorrowClasses) {
   console.log('准备发送明日课程预告');
-  console.log(`预告内容:\n${message}`);
   
-  const success = await sendFeishuNotification(webhookUrl, message);
+  const cardPayload = {
+    msg_type: 'interactive',
+    card: {
+      header: {
+        title: {
+          tag: 'plain_text',
+          content: '🌙 明日课程预告'
+        },
+        template: 'blue'
+      },
+      elements: [
+        {
+          tag: 'div',
+          text: {
+            tag: 'lark_md',
+            content: `📅 **明天 ${previewMessage.dateStr} 的课程安排：**`
+          }
+        },
+        {
+          tag: 'hr'
+        },
+        ...tomorrowClasses.map(course => ({
+          tag: 'div',
+          fields: [
+            {
+              is_short: true,
+              text: {
+                tag: 'lark_md',
+                content: `**📖 课程**\n${course.name}`
+              }
+            },
+            {
+              is_short: true,
+              text: {
+                tag: 'lark_md',
+                content: `**⏰ 时间**\n${course.courseTime.startTime}-${course.courseTime.endTime}`
+              }
+            },
+            {
+              is_short: false,
+              text: {
+                tag: 'lark_md',
+                content: ''
+              }
+            },
+            {
+              is_short: true,
+              text: {
+                tag: 'lark_md',
+                content: `**📍 地点**\n${course.locationText}`
+              }
+            },
+            {
+              is_short: true,
+              text: {
+                tag: 'lark_md',
+                content: `**🏫 校区**\n${course.campus}校区`
+              }
+            }
+          ]
+        })),
+        {
+          tag: 'hr'
+        },
+        {
+          tag: 'div',
+          text: {
+            tag: 'lark_md',
+            content: '早点休息，明天加油！🌟'
+          }
+        }
+      ]
+    }
+  };
+
+  const success = await sendFeishuNotification(webhookUrl, cardPayload);
   
   if (success) {
     console.log('✅ 明日预告发送成功');
