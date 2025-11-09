@@ -2,14 +2,14 @@
 // 从原始 script.js 提取并优化的课程信息
 
 const courses = [
-  { 
-    name: "电子材料与器件", 
-    classId: "202510588", 
-    weeks: "1-18", 
-    dayOfWeek: 1, 
-    periods: [3, 4], 
-    location: "闵行，闵四教225", 
-    campus: "闵行" 
+  {
+    name: "电子材料与器件",
+    classId: "202510588",
+    weeks: "1-18",
+    dayOfWeek: 1,
+    periods: [3, 4],
+    location: "闵行，闵一教230",
+    campus: "闵行"
   },
   { 
     name: "药物化学生物学", 
@@ -20,14 +20,14 @@ const courses = [
     location: "闵行，闵二教316", 
     campus: "闵行" 
   },
-  { 
-    name: "人工智能药物设计", 
-    classId: "202511867", 
-    weeks: "1-18", 
-    dayOfWeek: 1, 
-    periods: [6, 7], 
-    location: "中北，文史楼105", 
-    campus: "中北" 
+  {
+    name: "人工智能药物设计",
+    classId: "202511867",
+    weeks: "1-18",
+    dayOfWeek: 1,
+    periods: [6, 7],
+    location: "中北，田家炳教书院132",
+    campus: "中北"
   },
   { 
     name: "药学实验室安全与科研伦理", 
